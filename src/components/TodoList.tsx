@@ -1,7 +1,7 @@
-import { useSelector } from 'react-redux'
+import { useAppSelector } from "../store";
 
 export const TodoList = () => {
-  const todos = useSelector(store => {  // Busca as informações do estado
+  const todos = useAppSelector(store => {  // Busca as informações do estado
     return store.todo
   })
 

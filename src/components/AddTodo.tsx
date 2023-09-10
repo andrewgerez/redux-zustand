@@ -12,6 +12,8 @@ export const AddTodo = () => {
     dispatch(add({
       newTodo,
     }))
+
+    setNewTodo('')
   }
   
   return (
