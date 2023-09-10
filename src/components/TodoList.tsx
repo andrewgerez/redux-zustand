@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 
 export const TodoList = () => {
-  const todos = useSelector(store => {
+  const todos = useSelector(store => {  // Busca as informações do estado
     return store.todo
   })
 
