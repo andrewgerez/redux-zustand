@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { useAppSelector } from "..";
 
-const playerSlice = createSlice({
+export const playerSlice = createSlice({
   name: "player",
   initialState: {
     course: {
@@ -10,7 +10,11 @@ const playerSlice = createSlice({
           id: "1",
           title: "Iniciando com React",
           lessons: [
-            { id: "Jai8w6K_GnY", title: "CSS Modules", duration: "13:45" },
+            { 
+              id: "Jai8w6K_GnY", 
+              title: "CSS Modules", 
+              duration: "13:45" 
+            },
             {
               id: "w-DW4DhDfcw",
               title: "Estilização do Post",
@@ -26,7 +30,11 @@ const playerSlice = createSlice({
               title: "Componente: Sidebar",
               duration: "09:12",
             },
-            { id: "Pj8dPeameYo", title: "CSS Global", duration: "03:23" },
+            { 
+              id: "Pj8dPeameYo", 
+              title: "CSS Global", 
+              duration: "03:23" 
+            },
             {
               id: "8KBq2vhwbac",
               title: "Form de comentários",
@@ -43,7 +51,11 @@ const playerSlice = createSlice({
               title: "Componente: Comment",
               duration: "13:45",
             },
-            { id: "Ng_Vk4tBl0g", title: "Responsividade", duration: "10:05" },
+            { 
+              id: "Ng_Vk4tBl0g", 
+              title: "Responsividade", 
+              duration: "10:05" 
+            },
             {
               id: "h5JA3wfuW1k",
               title: "Interações no JSX",
