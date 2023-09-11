@@ -1,31 +1,33 @@
-import { useState, FormEvent } from 'react'
-import { useDispatch } from 'react-redux'
-import { add } from '../store'
+// // Componente para testes de estado
 
-export const AddTodo = () => {
-  const [newTodo, setNewTodo] = useState('')
-  const dispatch = useDispatch()  // Dispara alterações no estado
+// import { useState, FormEvent } from 'react'
+// import { useDispatch } from 'react-redux'
+// import { add } from '../store'
 
-  const handleNewTodo = (e: FormEvent) => {
-    e.preventDefault()
+// export const AddTodo = () => {
+//   const [newTodo, setNewTodo] = useState('')
+//   const dispatch = useDispatch()  // Dispara alterações no estado
 
-    dispatch(add({
-      newTodo,
-    }))
+//   const handleNewTodo = (e: FormEvent) => {
+//     e.preventDefault()
 
-    setNewTodo('')
-  }
+//     dispatch(add({
+//       newTodo,
+//     }))
+
+//     setNewTodo('')
+//   }
   
-  return (
-    <form onSubmit={handleNewTodo}>
-      <input 
-        type="text" 
-        placeholder="Novo to-do" 
-        value={newTodo} 
-        onChange={e => setNewTodo(e.target.value)} 
-      />
+//   return (
+//     <form onSubmit={handleNewTodo}>
+//       <input 
+//         type="text" 
+//         placeholder="Novo to-do" 
+//         value={newTodo} 
+//         onChange={e => setNewTodo(e.target.value)} 
+//       />
 
-      <button type="submit">Adicionar</button>
-    </form>
-  )
-}
+//       <button type="submit">Adicionar</button>
+//     </form>
+//   )
+// }
