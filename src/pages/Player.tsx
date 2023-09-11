@@ -1,19 +1,31 @@
 import { useEffect } from 'react'
 import { MessageCircle } from 'lucide-react'
+import { useDispatch } from 'react-redux'
 import { Header } from '../components/Header'
 import { Video } from '../components/Video'
 import { Module } from '../components/Module'
 import { useAppSelector } from '../store'
-import { useCurrentLesson } from '../store/slices/player'
+import { start, useCurrentLesson } from '../store/slices/player'
+import { api } from '../lib/axios'
 
 export const Player = () => {
+  const dispatch = useDispatch()
+
   const modules = useAppSelector(state => 
-    state.player.course.modules)
+    state.player.course?.modules)
 
   const { currentLesson } = useCurrentLesson()
 
   useEffect(() => {
-    document.title = `Assistindo: ${currentLesson.title}`
+    api.get('/courses/1').then(response => {
+      dispatch(start(response.data))  // Envia os dados da API para o reducer
+    })
+  }, [])
+
+  useEffect(() => {
+    if (currentLesson) {
+      document.title = `Assistindo: ${currentLesson.title}`
+    }
   }, [currentLesson])
 
   return (
@@ -57,7 +69,7 @@ export const Player = () => {
             overflow-y-scroll 
             scrollbar scrollbar-thin scrollbar-track-zinc-950 scrollbar-thumb-zinc-800"
           >
-            {modules.map((module, index) => {
+            {modules && modules.map((module, index) => {
               return (
                 <Module 
                   key={module.id}
