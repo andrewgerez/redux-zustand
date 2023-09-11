@@ -1,4 +1,3 @@
-import { useAppSelector } from "../store"
 import { useCurrentLesson } from "../store/slices/player"
 
 export const Header = () => {

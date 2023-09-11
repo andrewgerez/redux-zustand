@@ -1,8 +1,7 @@
 import * as Collapsible from '@radix-ui/react-collapsible';
 import { ChevronDown } from "lucide-react"
-import { useDispatch } from 'react-redux'
 import { Lesson } from "./Lesson"
-import { useAppSelector } from '../store';
+import { useAppDispatch, useAppSelector } from '../store';
 import { play } from '../store/slices/player';
 
 interface IModule {
@@ -12,7 +11,7 @@ interface IModule {
 }
 
 export const Module = ({ moduleIndex, title, amountOfLessons }: IModule) => {
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
 
   const { currentModuleIndex, currentLessonIndex } = useAppSelector(state => {
     const { currentModuleIndex, currentLessonIndex } = state.player
