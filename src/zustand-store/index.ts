@@ -10,9 +10,7 @@ export const useStore = create<PlayerState>((set, get) => {
     isLoading: true,
 
     load: async () => {
-      set({
-        isLoading: true
-      })
+      set({ isLoading: true })
 
       const response = await api.get('/courses/1')
 
